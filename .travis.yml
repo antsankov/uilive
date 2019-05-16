@@ -31,4 +31,4 @@ install:
 script:
   - go build
   - go test
-  - if [ "$TRAVIS_OS_NAME" = "linux" -a "$CROSS_COMPILE" = "true" ]; then env GOOS=windows GOARCH=amd64 CC=x86_64-w64-mingw32-gcc go build -v; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" -a "$CROSS_COMPILE" = "true" ]; then env GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -v; fi
